@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>albums</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+    <ion-spinner *ngIf="loading == true " ></ion-spinner>
+    <ion-row class="ion-align-items-cente">
+      <ion-list>
+        <ion-card *ngFor="let album of dataSearchAlbum; let i=index"
+                  class="ion-justify-content-center ion-padding">
+          <ion-card-content class="ion-text-center " (click)="gotoTracks(album.id)">
+            <img src="{{album.cover_medium}}" alt=""/>
+            <p>{{album.title}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+    </ion-row>
+  </div>
+</ion-content>

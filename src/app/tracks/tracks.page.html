@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>tracks</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+    <ion-spinner *ngIf="loading == true " ></ion-spinner>
+    <ion-row class="ion-align-items-cente">
+      <ion-list>
+        <ion-card *ngFor="let track of dataSearchTrack; let i=index"
+                  class="ion-justify-content-center ion-padding">
+          <ion-card-content class="ion-text-center ">
+            <audio controls src="{{track.preview}}" ></audio>
+            <p>{{track.title}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+    </ion-row>
+  </div>
+</ion-content>

@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'albums',
+    loadChildren: () => import('./albums/albums.module').then( m => m.AlbumsPageModule)
+  },
+  {
+    path: 'tracks',
+    loadChildren: () => import('./tracks/tracks.module').then( m => m.TracksPageModule)
+  },
 ];
 
 @NgModule({
